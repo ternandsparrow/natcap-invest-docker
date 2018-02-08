@@ -3,7 +3,10 @@
 The image contains all the data it needs to run the pollination model, we just want to mount a volume so we can get the results.
 ```bash
 mkdir /tmp/output
-docker run --rm -v /tmp/output:/workspace invest:3.3.3-pollination
+docker run \
+ --rm \
+ -v /tmp/output:/workspace \
+ tomsaleeba/natcap-invest-docker:3.3.3-pollination
 sudo chown -R `id -u` /tmp/output
 # now browse to /tmp/output to see the output files
 ```

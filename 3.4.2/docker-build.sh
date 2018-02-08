@@ -18,6 +18,7 @@ if [ ! -d "$poll_dir" ]; then
 fi
 
 docker build \
- -t invest:$invest_version-pollination \
+ --tag tomsaleeba/natcap-invest-docker:$invest_version-pollination \
+ --tag tomsaleeba/natcap-invest-docker:latest \
  --build-arg investversion=$invest_version \
  .

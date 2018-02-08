@@ -9,9 +9,11 @@ apt-get update
 apt-get install --assume-yes --no-install-recommends \
     libgdal-dev \
     mercurial \
+    python \
     python-pip \
     python-setuptools \
     python-dev \
+    python-pkg-resources \
     gcc \
     g++
 pip install --upgrade pip
@@ -22,11 +24,16 @@ export C_INCLUDE_PATH=/usr/include/gdal
 pip install -r https://bitbucket.org/natcap/invest/raw/$invest_version/requirements.txt
 pip install hg+https://bitbucket.org/natcap/invest@$invest_version
 apt-get purge --assume-yes \
-    mercurial
+    mercurial \
+    python-pip \
+    python-setuptools \
+    python-dev \
+    gcc \
+    g++
 apt-get autoremove --assume-yes
 apt-get --assume-yes clean
 rm -rf \
  /var/lib/apt/lists/* \
  /tmp/* \
  /var/tmp/*
-# TODO consider removing pip, but leaving python. Need to install the pkg..? dep of invest though
+rm setup.sh
