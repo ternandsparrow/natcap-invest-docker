@@ -15,4 +15,6 @@ args = {
 }
 
 if __name__ == '__main__':
+    print('[INFO] starting execution of pollination model')
     natcap.invest.pollination.execute(args)
+    print('[INFO] finished execution of pollination model')

@@ -6,14 +6,14 @@ if [ -z "$invest_version" ]; then
     exit 1
 fi
 apt-get update
-# optimise with --no-install-recommends when we know what we need
-apt-get install --assume-yes \
+apt-get install --assume-yes --no-install-recommends \
     libgdal-dev \
     mercurial \
-    python-pip #\
-    # python-setuptools \
-    # gcc \
-    # g++
+    python-pip \
+    python-setuptools \
+    python-dev \
+    gcc \
+    g++
 pip install --upgrade pip
 pip install numpy
 pip install 'pygeoprocessing>=0.5.0,<0.6.0'
