@@ -23,6 +23,7 @@ pip install -r https://bitbucket.org/natcap/invest/raw/$invest_version/requireme
 pip install hg+https://bitbucket.org/natcap/invest@$invest_version
 apt-get purge --assume-yes \
     mercurial
+apt-get autoremove --assume-yes
 apt-get --assume-yes clean
 rm -rf \
  /var/lib/apt/lists/* \
