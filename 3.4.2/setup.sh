@@ -8,7 +8,6 @@ fi
 apt-get update
 apt-get install --assume-yes --no-install-recommends \
     libgdal-dev \
-    mercurial \
     python \
     python-pip \
     python-setuptools \
@@ -22,9 +21,8 @@ pip install 'pygeoprocessing>=0.5.0,<0.6.0'
 export CPLUS_INCLUDE_PATH=/usr/include/gdal
 export C_INCLUDE_PATH=/usr/include/gdal
 pip install -r https://bitbucket.org/natcap/invest/raw/$invest_version/requirements.txt
-pip install hg+https://bitbucket.org/natcap/invest@$invest_version
+pip install https://bitbucket.org/natcap/invest/get/$invest_version.zip
 apt-get purge --assume-yes \
-    mercurial \
     python-pip \
     python-setuptools \
     python-dev \

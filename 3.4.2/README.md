@@ -6,7 +6,7 @@ mkdir /tmp/output
 docker run \
  --rm \
  -v /tmp/output:/workspace \
- tomsaleeba/natcap-invest-docker:3.4.2-pollination # there isn't much output, it takes less than 30 seconds to run usually
+ tomsaleeba/natcap-invest-docker:3.4.2-pollination # there isn't much console output and it takes less than 30 seconds to run usually
 sudo chown -R `id -u` /tmp/output
 # now browse to /tmp/output to see the output files
 ```
