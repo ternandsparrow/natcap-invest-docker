@@ -1,10 +1,7 @@
 #!/usr/bin/env sh
 set -e
-invest_version=$1
-if [ -z "$invest_version" ]; then
-    echo '[ERROR] first param must be InVEST version, e.g. 3.4.2'
-    exit 1
-fi
+invest_version=3.4.2
+
 apt-get update
 apt-get install --assume-yes --no-install-recommends \
     libgdal-dev \
@@ -14,7 +11,17 @@ apt-get install --assume-yes --no-install-recommends \
     python-dev \
     python-pkg-resources \
     gcc \
-    g++
+    g++ \
+    wget \
+    unzip
+
+pushd /data
+poll_zip=pollination.zip
+wget -O $poll_zip "http://data.naturalcapitalproject.org/invest-data/$invest_version/pollination.zip"
+unzip $poll_zip
+rm $poll_zip
+popd
+
 pip install --upgrade pip
 pip install numpy
 pip install 'pygeoprocessing>=0.5.0,<0.6.0'
@@ -27,7 +34,9 @@ apt-get purge --assume-yes \
     python-setuptools \
     python-dev \
     gcc \
-    g++
+    g++ \
+    wget \
+    unzip
 apt-get autoremove --assume-yes
 apt-get --assume-yes clean
 rm -rf \
