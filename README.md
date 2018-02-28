@@ -9,13 +9,13 @@ The image contains all the data it needs to run the pollination model, we just w
 mkdir /tmp/output
 docker run \
  --rm \
- --it \
+ -it \
  -v /tmp/output:/workspace \
  tomsaleeba/natcap-invest-docker:3.4.2-pollination # it takes less than 30 seconds to run usually
 sudo chown -R `id -u` /tmp/output
 # now browse to /tmp/output to see the output files
 ```
-We use the `--it` flag so we get log output in a timely manner. You can leave it out but the log messages don't seem to be flushed until the end of the run.
+We use the `-it` flag so we get log output in a timely manner. You can leave it out but the log messages don't seem to be flushed until the end of the run.
 
 ## Building the image locally
 
