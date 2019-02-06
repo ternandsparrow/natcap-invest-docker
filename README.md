@@ -14,7 +14,7 @@ docker run \
  --rm \
  -it \
  -v /tmp/output:/workspace \
- ternandsparrow/natcap-invest-docker:1.0.0_3.4.2 # it takes less than 30 seconds to run usually
+ ternandsparrow/natcap-invest-docker:1.0.1_3.4.2 # it takes less than 30 seconds to run usually
 
 sudo chown -R `id -u` /tmp/output
 # now browse to /tmp/output to see the output files
@@ -27,7 +27,7 @@ The build is fully automated and will download everything it needs.
 ```bash
 cd natcap-invest-docker/
 docker build \
-  -t ternandsparrow/natcap-invest-docker:1.0.0_3.4.2 \
+  -t ternandsparrow/natcap-invest-docker:1.0.1_3.4.2 \
   .
 # see above for how to run it
 ```

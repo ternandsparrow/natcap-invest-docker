@@ -22,11 +22,11 @@ unzip $poll_zip
 rm $poll_zip
 popd
 
-pip install --upgrade pip
-pip install numpy
-pip install 'pygeoprocessing>=0.5.0,<0.6.0'
+pip install numpy wheel
 export CPLUS_INCLUDE_PATH=/usr/include/gdal
 export C_INCLUDE_PATH=/usr/include/gdal
+# invest doesn't pin the versions
+pip install 'pygeoprocessing>=0.5.0,<0.6.0' 'matplotlib<3'
 pip install -r https://bitbucket.org/natcap/invest/raw/$invest_version/requirements.txt
 pip install https://bitbucket.org/natcap/invest/get/$invest_version.zip
 apt-get purge --assume-yes \
