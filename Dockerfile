@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:19.04
 
 ADD setup.sh .
 RUN mkdir -p /data /workspace/pollination
