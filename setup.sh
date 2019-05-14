@@ -29,7 +29,6 @@ export CPLUS_INCLUDE_PATH=/usr/include/gdal
 export C_INCLUDE_PATH=/usr/include/gdal
 # invest doesn't pin the versions
 pip install 'matplotlib<3'
-pip install -r https://bitbucket.org/natcap/invest/raw/$invest_version/requirements.txt
 pip install https://bitbucket.org/natcap/invest/get/$invest_version.zip
 apt-get purge --assume-yes \
     python-pip \
