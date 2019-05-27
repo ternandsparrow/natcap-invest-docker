@@ -1,6 +1,14 @@
 #!/usr/bin/env sh
-set -e
-invest_version=3.6.0
+set -euo pipefail
+
+# can be any git commit-ish (tags, commits, branches)
+# investCodeVersion=3.6.0
+investCodeVersion=f527f3a
+
+# check http://data.naturalcapitalproject.org/invest-data/ for options
+# NOTE: this data is only an example used for the tester UI, it is NOT required
+#       for running in production when the user supplies data.
+investDataVersion=3.6.0
 
 apt-get update
 apt-get install --assume-yes --no-install-recommends \
@@ -19,7 +27,7 @@ apt-get install --assume-yes --no-install-recommends \
 
 pushd /data
 poll_zip=pollination.zip
-wget -O $poll_zip "http://data.naturalcapitalproject.org/invest-data/$invest_version/pollination.zip"
+wget -O $poll_zip "http://data.naturalcapitalproject.org/invest-data/$investDataVersion/pollination.zip"
 unzip $poll_zip
 rm $poll_zip
 popd
@@ -29,7 +37,7 @@ export CPLUS_INCLUDE_PATH=/usr/include/gdal
 export C_INCLUDE_PATH=/usr/include/gdal
 # invest doesn't pin the versions
 pip install 'matplotlib<3'
-pip install https://bitbucket.org/natcap/invest/get/$invest_version.zip
+pip install https://bitbucket.org/natcap/invest/get/$investCodeVersion.zip
 apt-get purge --assume-yes \
     python-pip \
     python-setuptools \
