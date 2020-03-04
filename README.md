@@ -14,7 +14,7 @@ docker run \
  --rm \
  -it \
  -v /tmp/output:/workspace \
- ternandsparrow/natcap-invest-docker:1.1.0_3.6.0 # it takes less than 2 minutes to run usually
+ ternandsparrow/natcap-invest-docker:1.1.0_3.8.0 # it takes less than 2 minutes to run usually
 
 sudo chown -R `id -u` /tmp/output
 # now browse to /tmp/output to see the output files
@@ -26,11 +26,20 @@ We use the `-it` flag so we get log output in a timely manner. You can leave it 
 The build is fully automated and will download everything it needs.
 ```bash
 cd natcap-invest-docker/
-docker build -t ternandsparrow/natcap-invest-docker:1.1.0_3.6.0 .
+docker build -t ternandsparrow/natcap-invest-docker:1.1.0_3.8.0 .
 # see above for how to run it
 ```
 
 ## Changelog
+
+### 1.1.1_3.8.0
+
+ - move to version 3.8.0 of invest
+ - using python 3.7 now, not that if affects the external facing API of our app
+
+### 1.1.1_3.6.0
+
+ - streamline install of python requirements
 
 ### 1.1.0_3.6.0
 
