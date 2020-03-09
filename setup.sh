@@ -31,7 +31,7 @@ unzip $poll_zip
 rm $poll_zip
 popd
 
-pip3 install numpy wheel Cython
+pip3 install numpy wheel Cython ptvsd
 export CPLUS_INCLUDE_PATH=/usr/include/gdal
 export C_INCLUDE_PATH=/usr/include/gdal
 pip3 install https://bitbucket.org/natcap/invest/get/$investCodeVersion.zip
