@@ -3,6 +3,8 @@ This repo is a docker wrapper around NatCap's InVEST: https://bitbucket.org/natc
 Currently the focus is on running the pollination model but it could easily be adapted to run any of the other models.
 
 ## Running the image
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fternandsparrow%2Fnatcap-invest-docker.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fternandsparrow%2Fnatcap-invest-docker?ref=badge_shield)
+
 
 We use a version scheme for GitHub and DockerHub tags: `{our version}_{InVEST version}`, for example `1.0.0_3.4.2` means 1.0.0 is our version and we're using version 3.4.2 of InVEST.
 Check DockerHub for the latest tag.
@@ -69,3 +71,7 @@ remote debugger (like vscode) to the Docker container. You can do it like this:
 ### 1.1.0_3.6.0
 
  - move to version 3.6.0 of invest (model runtimes seem to have doubled)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fternandsparrow%2Fnatcap-invest-docker.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fternandsparrow%2Fnatcap-invest-docker?ref=badge_large)
