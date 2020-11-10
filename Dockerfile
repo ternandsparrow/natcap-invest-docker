@@ -1,4 +1,4 @@
-FROM ubuntu:19.04
+FROM python:3.8-buster
 
 ADD setup.sh .
 RUN mkdir -p /data /workspace/pollination

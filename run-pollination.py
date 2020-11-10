@@ -14,11 +14,13 @@ def now():
 start_ms = now()
 print('[INFO] starting up')
 
+dataDir = u'/data/pollination'
+
 args = {
-    u'farm_vector_path': u'/data/pollination/farms.shp',
-    u'guild_table_path': u'/data/pollination/guild_table.csv',
-    u'landcover_biophysical_table_path': u'/data/pollination/landcover_biophysical_table.csv',
-    u'landcover_raster_path': u'/data/pollination/landcover.tif',
+    u'farm_vector_path': dataDir + u'/farms.shp',
+    u'guild_table_path': dataDir + u'/guild_table.csv',
+    u'landcover_biophysical_table_path': dataDir + u'/landcover_biophysical_table.csv',
+    u'landcover_raster_path': dataDir + u'/landcover.tif',
     u'results_suffix': u'',
     u'workspace_dir': u'/workspace/pollination',
 }

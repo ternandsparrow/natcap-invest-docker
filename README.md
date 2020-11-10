@@ -1,32 +1,42 @@
-This repo is a docker wrapper around NatCap's InVEST: https://bitbucket.org/natcap/invest.
+This repo is a docker wrapper around NatCap's InVEST:
+https://github.com/natcap/invest.
 
-Currently the focus is on running the pollination model but it could easily be adapted to run any of the other models.
+Currently the focus is on running the pollination model but it could easily be
+adapted to run any of the other models.
 
 ## Running the image
 
-We use a version scheme for GitHub and DockerHub tags: `{our version}_{InVEST version}`, for example `1.0.0_3.4.2` means 1.0.0 is our version and we're using version 3.4.2 of InVEST.
-Check DockerHub for the latest tag.
+The image is built and deployed on DockerHub so you *don't* need to clone this
+repo to run it. You only need to clone if you're going to do some development.
 
-The image contains all the data it needs to run the pollination model, we just want to mount a volume so we can get the results on the host.
+We use a version scheme for GitHub and DockerHub tags: `{our version}_{InVEST
+version}`, for example `1.0.0_3.4.2` means 1.0.0 is our version and we're using
+version 3.4.2 of InVEST. Check DockerHub for the latest tag.
+
+The image contains all the data it needs to run the pollination model, we just
+want to mount a volume so we can get the results on the host.
 ```bash
 mkdir /tmp/output
+# it takes less than 2 minutes to run usually
 docker run \
  --rm \
  -it \
  -v /tmp/output:/workspace \
- ternandsparrow/natcap-invest-docker:1.1.0_3.8.0 # it takes less than 2 minutes to run usually
+ ternandsparrow/natcap-invest-docker:1.1.3_3.8.9
 
 sudo chown -R `id -u` /tmp/output
 # now browse to /tmp/output to see the output files
 ```
-We use the `-it` flag so we get log output in a timely manner. You can leave it out but the log messages don't seem to be flushed until the end of the run.
+We use the `-it` flag so we get log output in a timely manner. You can leave it
+out but the log messages don't seem to be flushed until the end of the run.
 
 ## Building the image locally
 
 The build is fully automated and will download everything it needs.
 ```bash
+tagVersion=1.1.3_3.8.9 # TODO change this to suit
 cd natcap-invest-docker/
-docker build -t ternandsparrow/natcap-invest-docker:1.1.0_3.8.0 .
+docker build -t ternandsparrow/natcap-invest-docker:$tagVersion
 # see above for how to run it
 ```
 
@@ -51,6 +61,11 @@ remote debugger (like vscode) to the Docker container. You can do it like this:
      breakpoints before execution continues
 
 ## Changelog
+
+### 1.1.3_3.8.9
+
+ - update to `3.8.9` of InVEST
+ - update docker base image to one with that is still supported and has 2.x GDAL
 
 ### 1.1.2_3.8.0
 
