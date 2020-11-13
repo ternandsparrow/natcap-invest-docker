@@ -26,6 +26,7 @@ poll_zip=pollination.zip
 wget -O $poll_zip "$investDataUrl"
 unzip $poll_zip
 rm $poll_zip
+mv pollination pollination-sample
 popd
 
 pip3 install numpy Cython ptvsd

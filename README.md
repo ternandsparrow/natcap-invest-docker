@@ -62,6 +62,10 @@ remote debugger (like vscode) to the Docker container. You can do it like this:
 
 ## Changelog
 
+### 1.1.4_3.8.9
+
+ - move sample data from `/data/pollination` to `/data/pollination-sample`
+
 ### 1.1.3_3.8.9
 
  - update to `3.8.9` of InVEST
