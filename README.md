@@ -5,6 +5,8 @@ Currently the focus is on running the pollination model but it could easily be
 adapted to run any of the other models.
 
 ## Running the image
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fternandsparrow%2Fnatcap-invest-docker.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fternandsparrow%2Fnatcap-invest-docker?ref=badge_shield)
+
 
 The image is built and deployed on DockerHub so you *don't* need to clone this
 repo to run it. You only need to clone if you're going to do some development.
@@ -88,3 +90,7 @@ remote debugger (like vscode) to the Docker container. You can do it like this:
 ### 1.1.0_3.6.0
 
  - move to version 3.6.0 of invest (model runtimes seem to have doubled)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fternandsparrow%2Fnatcap-invest-docker.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fternandsparrow%2Fnatcap-invest-docker?ref=badge_large)
